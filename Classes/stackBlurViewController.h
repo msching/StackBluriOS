@@ -8,13 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface stackBlurViewController : UIViewController {
-	IBOutlet	UIImageView *imagePreview;
-	UIImage *source;
-}
-
-- (IBAction) sliderChanged:(id)sender;
-
+@interface stackBlurViewController : UIViewController
 
 @end
 
