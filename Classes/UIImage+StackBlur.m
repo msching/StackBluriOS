@@ -59,7 +59,8 @@ inline static void zeroClearInt(int* p, size_t count) { memset(p, 0, sizeof(int)
 	// First get the image into your data buffer
     CGImageRef inImage = self.CGImage;
     UInt8 nbPerCompt = CGImageGetBitsPerPixel(inImage);
-    if(nbPerCompt != 32){
+    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(inImage);
+    if(nbPerCompt != 32 || alphaInfo != kCGImageAlphaPremultipliedLast){
         UIImage *tmpImage = [self normalize];
         inImage = tmpImage.CGImage;
     }
