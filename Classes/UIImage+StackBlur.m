@@ -82,11 +82,11 @@ inline static void zeroClearInt(int* p, size_t count) { memset(p, 0, sizeof(int)
 											 );
 	
     // Apply stack blur
-    const UInt8 imageWidth  = CGImageGetWidth(inImage);
-	const UInt8 imageHeight = CGImageGetHeight(inImage);
+//    const UInt8 imageWidth  = CGImageGetWidth(inImage);
+//	const UInt8 imageHeight = CGImageGetHeight(inImage);
     [self.class applyStackBlurToBuffer:m_PixelBuf
-                                 width:imageWidth
-                                height:imageHeight
+                                 width:self.size.width
+                                height:self.size.height
                             withRadius:inradius];
     
     // Make new image
